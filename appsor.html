@@ -1,4 +1,7 @@
 <html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
 <body>
 <form action="https://docs.google.com/forms/d/e/1FAIpQLScBV4NAJVvGl2RV_6B4pqqrc1JpCn9qnpG_yocW2JSXrhno8A/formResponse" target="_self" method="POST" id="mG61Hd">
 	<h2>Basic Information</h2>
@@ -70,7 +73,38 @@
 		<h3>Why?</h3>
 		<textarea data-rows="1" tabindex="0" aria-label="Why?" name="entry.1728816468" style="height: 24px;"></textarea>
 	</div>
-	<input type="submit" value="Submit">
+	<input type="submit" value="Submit" id="mG61Hd-submit">
 </form>
+
+<!-- Shit copypasted from https://medium.com/@rhyneav/avoid-databases-by-hacking-a-google-form-d20cd2b6a020 -->
+
+<!-- Hidden iframe -->
+<iframe name="secret-frame" width="0" height="0" border="0" style="display: none;"></iframe>
+
+<!-- Script to show dialogue and reset form -->
+<script type="text/javascript">
+// replace "ss-submit" with the ID of your submit button
+//document.getElementById("mG61Hd-submit").addEventListener("click", function(){
+  // replace the "It works!" with what you want to appear in the Javascript dialogue
+  //alert("Thank you for submitting~!")
+  // replace "ss-form" with the ID of your form
+  //document.getElementById("mG61Hd").reset();
+//});
+/*
+	$("#mG61Hd").submit(function(event) {
+		event.preventDefault();
+		var url = "https://docs.google.com/forms/d/e/1FAIpQLScBV4NAJVvGl2RV_6B4pqqrc1JpCn9qnpG_yocW2JSXrhno8A/formResponse"
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: $("#mG61Hd").serialize(),
+			success: function(data) {
+				alert("Thank you for submitting~!");
+				$("#mG61Hd").reset();
+			}
+		});
+	});
+	*/
+</script>
 </body>
 </html>
